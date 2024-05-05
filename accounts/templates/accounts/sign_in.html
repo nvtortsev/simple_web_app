@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<form class='wrapper' method="POST">
+	{% csrf_token %}
+	{% comment %} форма авторизации {% endcomment %}
+	{{form.as_p}}
+	<button type='submit'>Войти</button>
+</form>
+{% endblock content %}

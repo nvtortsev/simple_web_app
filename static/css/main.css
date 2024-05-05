@@ -1,0 +1,19 @@
+.products {
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-bottom: 2rem;
+	align-items: center;
+	border: 1px solid black;
+}
+
+.name {
+	flex: 0.9;
+}
+
+.flex {
+	display: flex;
+	gap: 0.5rem;
+	flex-direction: column;
+}

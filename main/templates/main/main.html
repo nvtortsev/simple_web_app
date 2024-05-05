@@ -1,0 +1,39 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static "css/main.css" %}">
+{% endblock css %}
+
+{% block content %}
+<div class='wrapper'>
+	{% comment %} если товары есть {% endcomment %}
+	{% if products %}
+
+	{% for product in products %}
+	<div class='products'>
+		<h2 class='name'>Название:{{product.name}}</h2>
+		<h2>Цена:{{product.price}} руб.</h2>
+		<div class='flex'>
+			<h4>В наличии:{{product.available}}</h2>
+				{% if user.is_authenticated %}
+				<a href="goods/create_order">
+					<button>Сделать заказ</button>
+				</a>
+				{% else %}
+				<a href="/accounts/sign_in">
+					<button>Сделать заказ</button>
+				</a>
+				{% endif %}
+			
+		</div>
+	</div>
+	{% endfor %}
+	{% comment %} если товаров нет {% endcomment %}
+	{% else %}
+	<h1>Товаров нет</h1>
+	{% endif %}
+</div>
+
+
+{% endblock content %}

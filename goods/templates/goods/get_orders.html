@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static "css/get_orders.css" %}">
+{% endblock css %}
+
+
+{% block content %}
+<div class="wrapper">
+	{% if orders %}
+	{% for order in orders%}
+	<div class='orders'>
+		<h2>Товар: {{order.product}}</h2>
+		<h2>Адрес доставки: {{order.address}}</h2>
+		<h2>Количество: {{order.quantity}}</h2>
+		<h2>Заказ оформил: {{order.user}}</h2>
+		<h2>Статус заказа: {{order.status}}</h2>
+	</div>
+	{% endfor %}
+{% else %}
+	<h1>Заказов нет</h1>
+{% endif %}
+<a href="/goods/create_order"><button>Создать новый заказ</button></a>	
+</div>
+
+{% endblock content %}

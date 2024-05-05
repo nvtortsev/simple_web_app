@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: aliceblue;
+  padding: 0 4rem;
+  height: 4rem;
+  background: #4537ad;
+}

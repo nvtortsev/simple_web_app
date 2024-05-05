@@ -1,0 +1,12 @@
+.orders {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	width: 40rem;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}

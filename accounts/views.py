@@ -39,7 +39,7 @@ def sign_in(request):
                 auth.login(request, user)
                 return redirect("/")
             else:
-                messages.info("Проверьте логин или пароль")
+                messages.info(request, "Проверьте логин или пароль")
                 return redirect("/accounts/sign_in/")
     else:
         form = SignInForm()

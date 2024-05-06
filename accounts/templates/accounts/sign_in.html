@@ -5,8 +5,14 @@
 
 <form class='wrapper' method="POST">
 	{% csrf_token %}
+	
+	
 	{% comment %} форма авторизации {% endcomment %}
 	{{form.as_p}}
+	{% comment %} ошибки валидации {% endcomment %}
+	{% for message in messages %}
+		<p>{{message}}</p>
+	{% endfor %}
 	<button type='submit'>Войти</button>
 </form>
 {% endblock content %}
